@@ -26,6 +26,7 @@ const Navba = () => {
                 <option value="australia">Australia</option>
             </select>
         </div>
+        {/* This is the end of inner div. */}
     </div></div>
   )
 }

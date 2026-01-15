@@ -34,6 +34,7 @@ function App() {
         <RouterProvider router={approuter} />
       </div> */}
       <Navba />
+      
     </>
   )
 }

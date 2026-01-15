@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#navbar{
+    height: 80px;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    border:2px solid black;
+    background-image: url('bg-cover.png');
+    background-size: cover;
+}
+#logoi{
+    height: 70px;
+    width: 160px;
+}
+#pho{
+    height: 70px;
+    width: 160px;
+}
+#btns{
+    height:45px;
+    width:95px;
+    font-size: 30px;
+    border-radius: 8px;
+    background-color: rgb(253, 118, 27);
+    color:rgb(255, 255, 255);
+}
+#lvl{
+    font-size: 18px;
+    color:aliceblue;
+}
+#stn{
+    height: 24px;
+}
+#nav-contain{
+    display: flex;
+    padding: 0px 150px;
+    
+}

@@ -1,33 +1,36 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './Nabbarc.css' 
-import logo from "./logo.png"
+import logo2 from "./logo2.png"
 const Navba = () => {
   return (
     <div id='nav-contain'>
     <div id='navbar'>
         {/* <p>This is Navbar page.</p> */}
         <div id='logoi'>
-            <img id='pho'src={logo} alt="logo" width="200"  />
-        </div>
-        <div>
-            <button id='btns'>Login</button>
+            <img id='pho'src={logo2} alt="logo" width="200"  />
         </div>
 
-        <div id='in'>
-            <label id='lvl'>Select Country:</label>
-            <br />
-            <select id='stn'>
-                <option value="">- Select Country -</option>
-                <option value="india">India</option>
-                <option value="usa">USA</option>
-                <option value="uk">United Kingdom</option>
-                <option value="canada">Canada</option>
-                <option value="australia">Australia</option>
-            </select>
+        <div id='mulbtn'>
+            <div id='in'>
+                <label id='lvl'>Select State:</label>
+                <br />
+                <select id='stn'>
+                    <option value="">- Select State -</option>
+                    <option value="Jajpur">Jajpur</option>
+                    <option value="Dhenkanal">Dhenkanal</option>
+                    <option value="Angul">Angul</option>
+                    <option value="Bhadrak">Bhadrak</option>
+                    <option value="Cuttack">Cuttack</option>
+                </select>
+            </div>
+            <button className='nan-btn'>Home</button>
+            <button className='nan-btn'>Payment</button>
+            <button className='nan-btn'>Ticket Booking</button>
+            <button className='nan-btn'>Login</button>
         </div>
-        {/* This is the end of inner div. */}
-    </div></div>
+    </div>
+    </div>
   )
 }
 

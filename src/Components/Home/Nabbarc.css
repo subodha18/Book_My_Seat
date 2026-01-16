@@ -4,14 +4,15 @@
 }
 #navbar{
     height: 80px;
-    width: 1200px;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-between;
     border:2px solid black;
-    background-image: url('bg-cover.png');
-    background-size: cover;
+    /* background-image: url('bg-cover.png');
+    background-size: cover; */
+    background-color:#F47216;
 }
 #logoi{
     height: 70px;
@@ -21,14 +22,14 @@
     height: 70px;
     width: 160px;
 }
-#btns{
+/* #btns{
     height:45px;
     width:95px;
     font-size: 30px;
     border-radius: 8px;
     background-color: rgb(253, 118, 27);
     color:rgb(255, 255, 255);
-}
+} */
 #lvl{
     font-size: 18px;
     color:aliceblue;
@@ -36,8 +37,22 @@
 #stn{
     height: 24px;
 }
-#nav-contain{
+/* #nav-contain{
     display: flex;
     padding: 0px 150px;
     
+} */
+#mulbtn{
+    display: flex;
+    gap:5px;
+    align-items: center;
+}
+.nan-btn{
+    height: 30px;
+    width:auto;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #06bb5d;
+    color: #000000;
 }

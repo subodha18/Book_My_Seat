@@ -7,7 +7,8 @@ import Info from './Components/Owninfo/Info';
 import Navba from './Components/Home/Navba';
 import Footer from './Components/Foot/Footer';
 import Apply_info from './Components/Apply/Apply_info';
-
+import Addfe from './Components/MidShow/Addfe';
+import Place from './Components/Midshows/Place';
 // const approuter=createBrowserRouter(
 //   [
 //     {
@@ -39,6 +40,8 @@ function App() {
       {/* <Navba /> */}
       {/* <Apply_info /> */}
       {/* <Footer /> */}
+      {/* <Addfe /> */}
+      <Place />
     </>
   )
 }

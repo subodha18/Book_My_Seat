@@ -18,7 +18,7 @@
     
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 .icns {
     height: 48px;
@@ -30,4 +30,21 @@
     box-shadow: 10px 0 20px rgba(255, 85, 0, 0.351);
     transform: scale(1.05) translatey(-1px);
     /* box-shadow: 0 5px 15px #00bcd450; */
+}
+#play-icn{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+}
+#parat{
+    color: white;
+}
+#icn2{
+    display: flex;
+    background-color: aliceblue;
+    gap: 1px;
+}
+#icn2:hover{
+    box-shadow: 10px 0 20px rgba(255, 85, 0, 0.351);
+    transform: scale(1.01) translatey(-1px);
 }

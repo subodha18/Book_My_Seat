@@ -21,7 +21,6 @@ const Apply_info = () => {
             <p className='main-para'>
                 Q - How can I avail budget air tickets on MakeMyTrip?<br /><br />
                 A: It’s super-easy to avail budget airfare while booking your cheap flight tickets on MakeMyTrip. Just select the ‘Price’ filter once the available flight options are displayed and adjust according to your convenience. On the MakeMyTrip app, you can select the downward arrow, which will show the lowest airfare at the top and continue downward in ascending order.
-                Q - Why could I not avail the flight booking offers at the time of checkout?
             </p><br /><hr />
         </span>
         <span>

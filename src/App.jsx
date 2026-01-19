@@ -9,6 +9,7 @@ import Footer from './Components/Foot/Footer';
 import Apply_info from './Components/Apply/Apply_info';
 import Addfe from './Components/MidShow/Addfe';
 import Place from './Components/Midshows/Place';
+import Ticket from './Components/Ticket/Ticket';
 // const approuter=createBrowserRouter(
 //   [
 //     {
@@ -37,11 +38,13 @@ function App() {
         <RouterProvider router={approuter} />
       </div> */}
       
-      {/* <Navba /> */}
-      {/* <Apply_info /> */}
+      {/* <Navba /> <br /> */}
+      {/* <Apply_info /><br/> */}
+      
+      {/* <Addfe /><br/> */}
+      {/* <Place /><br/> */}
       {/* <Footer /> */}
-      {/* <Addfe /> */}
-      <Place />
+      <Ticket />
     </>
   )
 }

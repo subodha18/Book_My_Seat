@@ -1,0 +1,26 @@
+
+#con-all{
+    height:auto;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: auto;
+    background-color:rgb(237, 243, 242);
+    gap: 20px;
+    box-shadow: 5px 5px 5px rgba(105, 179, 179, 0.583);
+}
+#img-cont{
+    display: flex;
+    gap: 20px;
+    padding-bottom: 15px;
+    padding-left: 2.5px;
+    padding-right: 2.5px;
+}
+img{
+    border-radius: 17px;
+    
+}
+img:hover{
+    box-shadow: 5px 5px 5px rgb(189, 181, 181);
+}

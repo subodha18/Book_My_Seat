@@ -1,0 +1,16 @@
+#tik-con{
+    height: 300px;
+    width: 1200px;
+    border:1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+#check{
+    height: 50px;
+    width: 1160px;
+    border:1px solid black;
+    display: flex;
+    gap:15px;
+    align-items: center;
+}
+

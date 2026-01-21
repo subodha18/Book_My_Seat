@@ -1,4 +1,4 @@
-// import {createBrowserRouter,RouterProvider} from 'react-router-dom';
+import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import './App.css'
 import Login from './Components/First/Login';
 import User from './Components/use/User'
@@ -10,40 +10,47 @@ import Apply_info from './Components/Apply/Apply_info';
 import Addfe from './Components/MidShow/Addfe';
 import Place from './Components/Midshows/Place';
 import Ticket from './Components/Ticket/Ticket';
-// const approuter=createBrowserRouter(
-//   [
-//     {
-//       path:'/',
-//       element:<Login />
-//     },
-//     {
-//       path:'/owner',
-//       element:<Owneri />
-//     },
-//     {
-//       path:'/user',
-//       element:<User />
-//     },
-//     {
-//       path:'/businfo',
-//       element:<Info />
-//     }
-//   ])
+import Subus from './Components/subus';
+const approuter=createBrowserRouter(
+  [
+    {
+      path:'/',
+      element:<Login />
+    },
+    {
+      path:'/owner',
+      element:<Owneri />
+    },
+    {
+      path:'/user',
+      element:<User />
+    },
+    {
+      path:'/businfo',
+      element:<Info />
+    },
+    {
+      path:'/menu',
+      element:<Subus />
+    }
+    
+  ])
 function App() {
   
   return (
     <>
       <h4>OMM GANPATI BABA</h4>
-      {/* <div>
+      <div>
         <RouterProvider router={approuter} />
-      </div> */}
+      </div>
       
       {/* <Navba /> <br />
-      <Apply_info /><br/> */}
-      <Ticket />
-      {/* <Addfe /><br/>
+      <Apply_info /><br/>
+      <Ticket /> 
+      <Addfe /><br/>
       <Place /><br/>
       <Footer /> */}
+      {/* <Subus /> */}
       
     </>
   )

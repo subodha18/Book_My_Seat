@@ -80,31 +80,39 @@ const Ticket = () => {
         </div>
 
         <div id='offer-con'>
-          <div className='off'>
+
+          <div className='off off2'>
             <h3>SPACIAL</h3>
             <h3>Offers</h3>
           </div>
-          <div className='off'>
-            <h3>
-              STUDENT
-            </h3>
-            <p>
-              Extra discounts/baggage
-            </p>
+          <div className='off off3'>
+            <a href="#"><h3>Regular</h3></a>
+            
+            <p>Regular fares</p>
           </div>
+          <div className='off'>
+            <h3>STUDENT</h3>
+            <p>Extra discounts/baggage</p>
+          </div>
+
           <div className='off'>
             <h3>Travelling for work?</h3>
             <p>Up to 10% Extra Saving !</p>
           </div>
+
           <div className='off'>
             <h3>Armed Forces</h3>
             <p>Up to 600 off</p>
           </div>
+
           <div className='off'>
             <h3>Doctor and Nurses</h3>
             <p>Up to 600 off</p>
           </div>
-
+          <div id='none'></div>
+          <div className='off' id='track'>
+            <h3>Bus Tracker</h3>
+          </div>
         </div>
       </div>
     </div>

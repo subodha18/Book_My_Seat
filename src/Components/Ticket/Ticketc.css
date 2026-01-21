@@ -1,13 +1,21 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(241, 240, 240);
+}
 #main-co{
-    height: 300px;
-    width: 1250px;
+    height:250px;
+    width: 1200px;
     border:1px solid black;
     display: flex;
     flex-direction: column;
     margin: auto;
 }
 #tik-con{
-    height: 300px;
+    height: 250px;
     width: 1200px;
     border:1px solid black;
     display: flex;
@@ -17,26 +25,27 @@
 
 #check{
     height: 50px;
-    width: 1160px;
-    border:1px solid black;
+    width: 1180px;
+    /* border:1px solid black; */
     display: flex;
     gap:15px;
-    align-items: center;
+    align-items:flex-end;
 }
 #abcx{
     height: 130px;
     width: 1180px;
     /* border: 1px solid black; */
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     margin-left: 10px;
+    box-sizing: border-box;
 }
 .lab{
     position: relative;
     height: 100%;
     width: 25%;
     border: 1px solid black;
-    
+    overflow: hidden;
 }
 .bor{
     border-top-left-radius: 10px;
@@ -55,6 +64,9 @@
     border: 1px solid black;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+
 }
 
 #offer-con{
@@ -62,11 +74,37 @@
     width: 1180px;
     display: flex;
     gap: 5px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     align-items: center;
+    margin-left: 10px;
 }
 .off{
     height: auto;
     width: auto;
     border: 1px solid black;
+    border-radius: 5px;
+    margin: 0px 10px;
+    overflow: hidden;
+
+}
+.off2{
+    margin-right: 50px;
+    border: none;
+}
+
+.off3 a{
+    text-decoration: none;
+    color:rgb(16, 160, 250)
+}
+#track{
+    height: 40px;
+    width: 110px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+.off:hover{
+    background-color: rgba(197, 239, 255, 0.463);
 }

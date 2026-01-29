@@ -1,116 +1,4 @@
-/* *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body{
-    background-color: rgb(241, 240, 240);
-}
-#main-co{
-    height:250px;
-    width: 1200px;
-    border:1px solid black;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-}
-#tik-con{
-    height: 250px;
-    width: 1200px;
-    border:1px solid black;
-    display: flex;
-    flex-direction: column;
-    gap:5px;
-}
 
-#check{
-    height: 50px;
-    width: 1180px;
-    /* border:1px solid black;
-    display: flex;
-    gap:15px;
-    align-items:flex-end;
-}
-#abcx{
-    height: 130px;
-    width: 1180px;
-    /* border: 1px solid black; 
-    display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
-    box-sizing: border-box;
-}
-.lab{
-    position: relative;
-    height: 100%;
-    width: 25%;
-    border: 1px solid black;
-    overflow: hidden;
-}
-.bor{
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-.start{
-    position: relative;
-    height: 100%;
-    width: 18%;
-    border: 1px solid black;
-}
-.seat{
-    position: relative;
-    height: 100%;
-    width: 14%;
-    border: 1px solid black;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    box-sizing: border-box;
-    overflow: hidden;
-
-}
-
-#offer-con{
-    height:100px;
-    width: 1180px;
-    display: flex;
-    gap: 5px;
-    /* border: 1px solid black; 
-    align-items: center;
-    margin-left: 10px;
-}
-.off{
-    height: auto;
-    width: auto;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 0px 10px;
-    overflow: hidden;
-
-}
-.off2{
-    margin-right: 50px;
-    border: none;
-}
-
-.off3 a{
-    text-decoration: none;
-    color:rgb(16, 160, 250)
-}
-#track{
-    height: 40px;
-    width: 110px;
-    border: 1px solid black;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    margin-left: 50px;
-}
-.off:hover{
-    background-color: rgba(197, 239, 255, 0.463);
-} */
-
-
-/* new */
 /* General Reset */
 * {
     margin: 0;
@@ -163,7 +51,7 @@ body{
 
 #check label {
     font-weight: bold;
-    color: #333;
+    color: #424141;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -174,7 +62,7 @@ body{
 #abcx {
     display: flex;
     flex-wrap: wrap;
-    background: #ff6803c4; /* Black contrast */
+    background: #d7d4d4c4; /* Black contrast */
     padding: 20px;
     border-radius: 15px;
     gap: 15px;
@@ -184,17 +72,17 @@ body{
 
 .lab {
     flex: 2;
-    color: white;
+    color: rgb(35, 34, 34);
 }
 
 .lab h2 {
-    color: #2ecc71; /* Green highlight for city names */
+    color: #20c465; /* Green highlight for city names */
     font-size: 1.5rem;
 }
 
 .lab p {
     font-size: 0.8rem;
-    color: #030303;
+    color: #0b0b0b;
 }
 
 .lab select, #dat, .seat select {
@@ -208,7 +96,7 @@ body{
 
 .start, .seat {
     flex: 1;
-    color: rgb(0, 0, 0);
+    color: rgb(21, 20, 20);
     font-size: 0.9rem;
 }
 

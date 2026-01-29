@@ -1,5 +1,6 @@
 import React from 'react'
 import './Infoc.css'
+import {Link} from 'react-router-dom'
 const Info = () => {
   return (
     <div className='owner-conta'>
@@ -27,7 +28,7 @@ const Info = () => {
         
         </div>
         <div >
-          <button className='btn3'>submit</button>
+          <Link to='/menu'><button type='submit' className='btn3'>submit</button></Link>
         </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+
 import './Nabbarc.css' 
 import logo2 from "./logo2.png"
 const Navba = () => {
@@ -27,7 +28,8 @@ const Navba = () => {
             <button className='nan-btn'>Home</button>
             <button className='nan-btn'>Payment</button>
             <button className='nan-btn'>Ticket Booking</button>
-            <button className='nan-btn'>Login</button>
+            {/* <button className='nan-btn'>Login</button> */}
+            <Link to='/'><button type='submit' className='nan-btn'>Login</button></Link>
         </div>
     </div>
     </div>

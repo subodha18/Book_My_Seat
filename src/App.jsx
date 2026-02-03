@@ -39,12 +39,11 @@ function App() {
   
   return (
     <>
-      <h4>OMM GANPATI BABA</h4>
+    
       <div>
         <RouterProvider router={approuter} />
       </div>
-      
-      
+
     </>
   )
 }

@@ -1,32 +1,90 @@
-import React from 'react'
-import '../use/Userc.css'
-import {Link} from 'react-router-dom'
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../use/Userc.css";
+
 const User = () => {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
+  // validation condition
+  const isFormValid =
+    name.trim() !== "" &&
+    phone.trim() !== "" &&
+    email.trim() !== "" &&
+    password.trim() !== "";
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!isFormValid) return;
+
+    // navigate only if valid
+    navigate("/menu");
+  };
+
   return (
-    <div className='user-container'>
-      <p>This is user page.</p>
+    <div className="user-container">
 
-      <div className='input-container'>
-        <label for="name">Username:</label>
-        <input type='text'placeholder='Enter your name' id='name'/>
-        <br />
-        <label for="mail">Email:</label>
-        <input type='email'placeholder='Enter your Email' id='mail'/>
-        <br />
-        <label for="num">Phone no:</label>
-        <input type='number'placeholder='Enter your number' id='num'/>
-        <br />
-        <label for="pass">Password:</label>
-        <input type='password'placeholder='Enter your password' id='pass'/>
-        <br />
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="input-container">
+          <label htmlFor="name">Username:</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-      <div className='btn2'>
-        
-        <Link to='/menu'><button type='submit' id='in-btn'>Login</button></Link>
-      </div>
+          <label htmlFor="mail">Email:</label>
+          <input
+            type="email"
+            id="mail"
+            placeholder="Enter your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <label htmlFor="num">Phone no:</label>
+          <input
+            type="tel"
+            id="num"
+            placeholder="Enter your number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+
+          <label htmlFor="pass">Password:</label>
+          <input
+            type="password"
+            id="pass"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+
+        <div className="btn2">
+          <button
+            type="submit"
+            id="in-btn"
+            disabled={!isFormValid}
+            style={{
+              cursor: isFormValid ? "pointer" : "not-allowed",
+              opacity: isFormValid ? 1 : 0.6,
+            }}
+          >
+            Login
+          </button>
+        </div>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default User
+export default User;
+

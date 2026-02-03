@@ -7,7 +7,7 @@ const Navba = () => {
   return (
     <div id='nav-contain'>
     <div id='navbar'>
-        {/* <p>This is Navbar page.</p> */}
+        
         <div id='logoi'>
             <img id='pho'src={logo2} alt="logo" width="150"  />
         </div>

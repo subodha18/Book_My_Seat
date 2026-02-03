@@ -2,9 +2,10 @@ import React from 'react'
 import './Log.css'
 import {Link} from 'react-router-dom'
 const Login = () => {
+
   return (
     <div className='log-container'>
-      <p>Hii This is Login.</p>
+      
       <div className='btn1-container'>
 
         <Link to='/owner'><button className='btn1'>Owner</button></Link>

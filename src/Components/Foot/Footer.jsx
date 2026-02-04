@@ -10,9 +10,9 @@ const Footer = () => {
 
         <div id='icn'>
             <a href="https://www.linkedin.com/in/bookmy-seat-1734233aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FontAwesomeIcon icon={faLinkedin} className='icns'/></a>
-            <a href="#"><FontAwesomeIcon icon={faGithub} className='icns'/></a>
-            <a href="#"><FontAwesomeIcon icon={faXTwitter} className='icns'/></a>
+            <a href="https://github.com/BookMySeatss"><FontAwesomeIcon icon={faGithub} className='icns'/></a>
             <a href="https://www.instagram.com/book_my_seats?igsh=bm42dnkzbmp3YTMw"><FontAwesomeIcon icon={faInstagram} className='icns'/></a>
+            <a href="#"><FontAwesomeIcon icon={faXTwitter} className='icns'/></a>
             <a href="#"><FontAwesomeIcon icon={faFacebook} className='icns'/></a>
         </div>
         <div id='play-icn'>

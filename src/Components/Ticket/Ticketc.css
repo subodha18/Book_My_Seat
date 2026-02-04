@@ -1,5 +1,4 @@
 
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +6,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* 55% Orange: Main Page Background */
 #main-co {
     /* min-height: 100vh; */
     /* width: 1200px; */
@@ -18,19 +16,10 @@
     margin: auto;
     position: relative;
     overflow: hidden;
-    /* Creating a sharp multi-color geometric background */
-    /* background: 
-        linear-gradient(115deg, 
-        /* #FF8C00 55%,
-        #2ecc71 55.2%, 
-        #2ecc71 75%, 
-        #000000 75.2%, 
-        #000000 90%,
-        #ffffff 90.2%);
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); */
+    
 }
 
-/* 15% White: Main Container */
+
 #tik-con {
     width: 95%;
     max-width: 1200px;
@@ -40,7 +29,6 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-/* Trip Type Selection */
 #check {
     display: flex;
     gap: 20px;
@@ -58,11 +46,10 @@
     cursor: pointer;
 }
 
-/* 15% Black & 20% Green: The Booking Bar */
 #abcx {
     display: flex;
     flex-wrap: wrap;
-    background: #d7d4d4c4; /* Black contrast */
+    background: #d7d4d4c4; 
     padding: 20px;
     border-radius: 15px;
     gap: 15px;
@@ -76,7 +63,7 @@
 }
 
 .lab h2 {
-    color: #20c465; /* Green highlight for city names */
+    color: #20c465; 
     font-size: 1.5rem;
 }
 
@@ -100,7 +87,6 @@
     font-size: 0.9rem;
 }
 
-/* Offers Section */
 #offer-con {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -112,7 +98,8 @@
     background: #f9f9f9;
     padding: 15px;
     border-radius: 12px;
-    border-left: 5px solid #FF8C00; /* Orange Accent */
+    border-left: 5px solid #FF8C00; 
+    border-right: 6px solid #16f9a2;
     transition: transform 0.3s ease;
     cursor: pointer;
 }
@@ -122,7 +109,6 @@
     background: #fff5e6;
 }
 
-/* 20% Green Influence: Special Promo Boxes */
 .off2 {
     background: #2ecc71;
     color: white;
@@ -147,12 +133,12 @@
     background: #222;
 }
 
-/* Custom Checkbox Color */
+
 input[type="checkbox"] {
-    accent-color: #2ecc71;
+    accent-color: #64f7a1;
 }
 
-/* Responsive fix */
+
 @media (max-width: 768px) {
     #abcx {
         flex-direction: column;

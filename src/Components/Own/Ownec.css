@@ -109,3 +109,9 @@
     background: linear-gradient(135deg, #2ecc71, #1e8f3f);
 }
 
+.pagee{
+    transition: transform 0.5s ease-in-out;
+}
+.slide-right{
+  transform: translatex(400px);
+}

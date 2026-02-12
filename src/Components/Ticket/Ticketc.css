@@ -113,7 +113,11 @@
     background: #2ecc71;
     color: white;
     border: none;
+    border-radius: 12px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .off3 h3 {
@@ -121,19 +125,34 @@
 }
 
 #track {
-    background: #000000;
-    color: #2ecc71;
+    background: #f9f9f9;
+    border-radius: 50px;
+    background-color: #4be050;
+    /* border-left: 5px solid #FF8C00;
+    border-right: 6px solid #16f9a2; */
+    transition: transform 0.3s ease;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
 }
 
 #track:hover {
-    background: #222;
+    transform: translateY(-5px);
+    background: #fff5e6;
+    background-color: #f98b16;
 }
 
-
+#Book {
+    background: transparent;
+    border: none;
+    color:#0b0b0b;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+}
 input[type="checkbox"] {
     accent-color: #64f7a1;
 }

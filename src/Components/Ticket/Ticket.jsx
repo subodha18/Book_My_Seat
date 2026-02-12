@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState } from "react";
+import { useState } from "react"
+import {Link} from 'react-router-dom'
 import './Ticketc.css'
 
   
@@ -81,7 +82,7 @@ const Ticket = () => {
 
         <div id='offer-con'>
 
-          <div className='off off2'>
+          <div className='off2'>
             <h3>SPACIAL</h3>
             <h3>Offers</h3>
           </div>
@@ -110,8 +111,8 @@ const Ticket = () => {
             <p>Up to 600 off</p>
           </div>
           <div id='none'></div>
-          <div className='off' id='track'>
-            <h3>Bus Tracker</h3>
+          <div id='track'>
+            <Link to='/'><button id="Book">Book</button></Link> 
           </div>
         </div>
       </div>

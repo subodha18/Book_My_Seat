@@ -131,3 +131,10 @@
   );
   transform: scale(1.05);
 }
+
+.page{
+    transition: transform 0.5s ease-in-out;
+}
+.slide-top {
+  transform: translatey(-400px);
+}

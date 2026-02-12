@@ -1,19 +1,33 @@
-import React from 'react'
-import './Log.css'
-import {Link} from 'react-router-dom'
+import React, { useState } from "react";
+import "./Log.css";
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
+  const [slide, setSlide] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    setSlide(true); // start animation
+
+    setTimeout(() => {
+      navigate(path); // go to next page after animation
+    }, 600); // must match CSS transition time
+  };
 
   return (
-    <div className='log-container'>
-      
-      <div className='btn1-container'>
-
-        <Link to='/owner'><button className='btn1'>Owner</button></Link>
-        <Link to='/user'><button className='btn1'>User</button></Link>
-
+    <div className={`page ${slide ? "slide-left" : ""}`}>
+      <div className="log-container">
+        <div className="btn1-container">
+          <button className="btn1" onClick={() => handleNavigate("/owner")}>
+            Owner
+          </button>
+          <button className="btn1" onClick={() => handleNavigate("/user")}>
+            User
+          </button>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

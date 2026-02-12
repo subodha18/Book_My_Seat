@@ -33,7 +33,6 @@
 // }
 
 // export default Owneri
-
 import { useState } from "react";
 import "./Ownec.css";
 import { useNavigate } from "react-router-dom";
@@ -43,6 +42,8 @@ const Owneri = () => {
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [slide, setSlide] = useState(false);
+
   const navigate = useNavigate();
 
   // Validation rules
@@ -57,64 +58,73 @@ const Owneri = () => {
 
     if (!isFormValid) return;
 
-    navigate("/businfo");
+    setSlide(true); // start animation
+
+    setTimeout(() => {
+      navigate("/businfo");
+    }, 600); // must match CSS duration
   };
 
   return (
-    <div className="owner-container">
+    <div className={`pagee ${slide ? "slide-right" : ""}`}>
+      <div className="owner-container">
+        <form onSubmit={handleSubmit}>
+          <div className="input-container2">
+            <label htmlFor="name">Owner Name:</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-      <form onSubmit={handleSubmit}>
-        <div className="input-container2">
+            <label htmlFor="num">Mobile Number:</label>
+            <input
+              type="text"
+              id="num"
+              placeholder="Enter mobile number"
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
+            />
 
-          <label htmlFor="name">Owner Name:</label>
-          <input
-            type="text"
-            id="name"
-            placeholder="Enter your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+            <label htmlFor="mail">Email:</label>
+            <input
+              type="email"
+              id="mail"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-          <label htmlFor="num">Mobile Number:</label>
-          <input
-            type="text"
-            id="num"
-            placeholder="Enter mobile number"
-            value={mobile}
-            onChange={(e) => setMobile(e.target.value)}
-          />
+            <label htmlFor="pass">Password:</label>
+            <input
+              type="password"
+              id="pass"
+              placeholder="Enter password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-          <label htmlFor="mail">Email:</label>
-          <input
-            type="email"
-            id="mail"
-            placeholder="Enter email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
-          <label htmlFor="pass">Password:</label>
-          <input
-            type="password"
-            id="pass"
-            placeholder="Enter password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
-        </div>
-
-        <div>
-          <button className="btn" type="submit" disabled={!isFormValid} style={{
-              cursor: isFormValid ? "pointer" : "not-allowed",
-              opacity: isFormValid ? 1 : 0.6,
-            }}>
-            Login
-          </button>
-        </div>
-      </form>
+          <div>
+            <button
+              className="btn"
+              type="submit"
+              disabled={!isFormValid}
+              style={{
+                cursor: isFormValid ? "pointer" : "not-allowed",
+                opacity: isFormValid ? 1 : 0.6,
+              }}
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default Owneri
+export default Owneri;
+

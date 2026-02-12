@@ -73,7 +73,8 @@
 
 /* 55% Orange Influence: Buttons */
 .nan-btn {
-    background: #FF8C00;
+    /* background: #FF8C00; */
+    background-color: rgb(184, 167, 151);
     color: #000000;
     border: none;
     padding: 10px 20px;

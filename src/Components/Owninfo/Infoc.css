@@ -92,3 +92,10 @@ html, body {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
   background: rgb(70, 93, 70);
 }
+
+.page{
+    transition: transform 0.5s ease-in-out;
+}
+.slide-left{
+  transform: translatey(400px);
+}

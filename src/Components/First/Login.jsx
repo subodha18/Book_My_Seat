@@ -7,11 +7,11 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
-    setSlide(true); // start animation
+    setSlide(true); 
 
     setTimeout(() => {
-      navigate(path); // go to next page after animation
-    }, 600); // must match CSS transition time
+      navigate(path); 
+    }, 600); 
   };
 
   return (

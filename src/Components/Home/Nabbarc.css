@@ -120,3 +120,41 @@
         font-size: 0.8rem;
     }
 }
+/* 📱 Mobile Responsive Design (Phones) */
+@media (max-width: 600px) {
+
+    #navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 10px;
+        border-radius: 15px;
+    }
+
+    #logoi img {
+        width: 120px;
+        margin-bottom: 10px;
+    }
+
+    #mulbtn {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    #in {
+        width: 100%;
+        text-align: center;
+    }
+
+    #stn {
+        width: 90%;
+        padding: 8px;
+    }
+
+    .nan-btn {
+        width: 90%;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

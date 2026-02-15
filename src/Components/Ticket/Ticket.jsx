@@ -112,7 +112,7 @@ const Ticket = () => {
           </div>
           <div id='none'></div>
           <div id='track'>
-            <Link to='/'><button id="Book">Book</button></Link> 
+            <Link to='/bus'><button id="Book">Book</button></Link> 
           </div>
         </div>
       </div>

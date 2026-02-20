@@ -65,7 +65,7 @@ const Ticket = () => {
           </label>
 
           <label className='start'>Return:
-            <input type="date" id='dat'/>
+            <input type="date" id='dt'/>
           </label>
 
           <label className='seat'>

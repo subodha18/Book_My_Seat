@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Nabbarc.css'
 import logo2 from "./logo2.png"
+import Ticket from '../Ticket/Ticket'
 
 const Navba = () => {
 
@@ -35,8 +36,7 @@ const Navba = () => {
               <option value="Cuttack">Cuttack</option>
             </select>
           </div>
-
-          <button className='nan-btn'>Home</button>
+          <Link to='menu'><button className='nan-btn'>Home</button></Link>
           <button className='nan-btn'>Payment</button>
           <button className='nan-btn'>Ticket Booking</button>
           <Link to='/'><button className='nan-btn'>Login</button></Link>

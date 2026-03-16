@@ -1,9 +1,8 @@
 import { useState } from "react";
-import "./Ownec.css";
-import { useNavigate } from "react-router-dom";
+import "./OwnerLogin.css";
+import { useNavigate, Link } from "react-router-dom";
 
 const Owneri = () => {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [slide, setSlide] = useState(false);
@@ -11,7 +10,6 @@ const Owneri = () => {
   const navigate = useNavigate();
 
   const isFormValid =
-    name.trim() !== "" &&
     email.includes("@") &&
     password.length >= 6;
 
@@ -21,30 +19,30 @@ const Owneri = () => {
     if (!isFormValid) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/owner/register", {
+      const res = await fetch("http://localhost:5000/api/owner/Login", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          name: name,
           email: email,
-          password: password,
-        }),
+          password: password
+        })
       });
 
       const data = await res.json();
 
       if (res.ok) {
-        alert("Registration Successful");
 
+        // login success
         setSlide(true);
 
         setTimeout(() => {
           navigate("/businfo");
         }, 600);
+
       } else {
-        alert(data.message || "Registration failed");
+        alert(data.message || "Owner not registered");
       }
 
     } catch (error) {
@@ -58,15 +56,6 @@ const Owneri = () => {
       <div className="owner-container">
         <form onSubmit={handleSubmit}>
           <div className="input-container2">
-
-            <label htmlFor="name">Owner Name:</label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Enter your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
 
             <label htmlFor="mail">Email:</label>
             <input
@@ -86,6 +75,10 @@ const Owneri = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
 
+            <p style={{ marginTop: "15px" }} id="Login">
+              If Don't have account <Link to="/owner/register">Register</Link>
+            </p>
+
           </div>
 
           <button
@@ -97,7 +90,7 @@ const Owneri = () => {
               opacity: isFormValid ? 1 : 0.6,
             }}
           >
-            Register
+            Login
           </button>
 
         </form>

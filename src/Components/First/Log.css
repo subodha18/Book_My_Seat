@@ -1,138 +1,69 @@
-/* *{
-    margin: 0px;
-    padding: 0px;
-}
-.log-container{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.btn-container{
-    height: 100px;
-    width: 300px;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-}
-.btn{
-    height: 30px;
-    width: 80px;
-    border-radius: 10px;
-    font-size:medium;
-    font-weight: bold;
-} */
-
-/* new */
-
-/* General Reset */
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+/* Full page background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  height: 100vh;
 }
 
-/* Multi-color Mesh Background with Bus Silhouette Shadow */
-.log-container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    
-    /* 55% Orange, 20% Green, 15% Black, 10% White Mesh Gradient */
-    background-color: #FF8C00;
-    background-image:   
-        radial-gradient(at 0% 0%, #2ecc71 0px, transparent 50%), 
-        radial-gradient(at 100% 0%, #9c7a53 0px, transparent 50%),
-        radial-gradient(at 100% 100%, #a29595d2 0px, transparent 50%),
-        radial-gradient(at 0% 100%, #FF8C00 0px, transparent 50%);
+/* Center container */
+.login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Bus Silhouette Shadow Layer */
-.log-container::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    /* Using a bus SVG as a background mask for the shadow effect */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="black" d="M480 192h-26.6l-14.4-64.8C430.7 92.1 400.3 72 366.1 72H145.9c-34.2 0-64.6 20.1-72.9 55.2L58.6 192H32c-17.7 0-32 14.3-32 32v160c0 17.7 14.3 32 32 32h16c0 35.3 28.7 64 64 64s64-28.7 64-64h160c0 35.3 28.7 64 64 64s64-28.7 64-64h16c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM112 432c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm288 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60%;
-    opacity: 0.1; /* Keeps it as a subtle shadow */
-    z-index: 0;
-    pointer-events: none;
+/* Title */
+.login-container h2 {
+  margin-bottom: 40px;
+  color: white;
+  font-size: 32px;
+  letter-spacing: 1px;
 }
 
-.log-container p {
-    z-index: 1;
-    font-size: 3rem;
-    font-weight: 900;
-    color: #ffffff;
-    margin-bottom: 2rem;
-    text-shadow: 4px 4px 0px #000000;
-    letter-spacing: -1px;
+/* Card container */
+.login-container button {
+  width: 250px;
+  padding: 18px;
+  margin: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: white;
+  color: #333;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
 }
 
-/* Glassmorphism Container */
-.btn1-container {
-    z-index: 1;
-    height: 150px;
-    width: 350px;
-    background: rgba(0, 0, 0, 0.7); /* Black Influence */
-    backdrop-filter: blur(15px);
-    border: 2px solid #2ecc71; /* Green Influence */
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+/* Hover animation */
+.login-container button:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  background: #f5f5f5;
 }
 
-/* Buttons */
-.btn1 {
-    height: 50px;
-    width: 100px;
-    border-radius: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    background-color: #2ecc71; /* Green Influence */
-    color: #ffffff; /* White Influence */
-    box-shadow: 0 8px 0px #1b7a43;
+/* Click animation */
+.login-container button:active {
+  transform: scale(0.97);
 }
 
+/* Mobile responsive */
+@media (max-width: 600px) {
 
-.btn1:hover {
-    transform: scale(1.1) rotate(-2deg);
-    background-color: #ffffff; /* White Change */
-    color: #2ecc71; /* Green Change */
-    box-shadow: 0 0px 0px #1b7a43;
-}
+  .login-container h2 {
+    font-size: 26px;
+    text-align: center;
+  }
 
-.btn1:active {
-    transform: scale(0.95);
-}
+  .login-container button {
+    width: 200px;
+    font-size: 16px;
+    padding: 15px;
+  }
 
-a {
-    text-decoration: none;
-}
-
-.page{
-    transition: transform 0.5s ease-in-out;
-}
-.slide-left {
-  transform: translateX(-100%);
 }

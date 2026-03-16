@@ -3,31 +3,31 @@ import "./Log.css";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [slide, setSlide] = useState(false);
+
   const navigate = useNavigate();
 
-  const handleNavigate = (path) => {
-    setSlide(true); 
+  const handleUser = () => {
+    navigate("/user/Login");
+  };
 
-    setTimeout(() => {
-      navigate(path); 
-    }, 600); 
+  const handleOwner = () => {
+    navigate("/owner/Login");
   };
 
   return (
-    <div className={`page ${slide ? "slide-left" : ""}`}>
-      <div className="log-container">
-        <div className="btn1-container">
-          <button className="btn1" onClick={() => handleNavigate("/owner")}>
-            Owner
-          </button>
-          <button className="btn1" onClick={() => handleNavigate("/user")}>
-            User
-          </button>
-        </div>
-      </div>
+
+    <div className="login-container">
+
+      <h2>Select Login Type</h2>
+
+      <button onClick={handleUser}>User Login</button>
+
+      <button onClick={handleOwner}>Owner Login</button>
+
     </div>
+
   );
+
 };
 
 export default Login;

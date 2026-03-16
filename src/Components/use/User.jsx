@@ -1,41 +1,63 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "../use/Userc.css";
 
-const User = () => {
+import { useState } from "react";
+import "./Userc.css";
+import { useNavigate } from "react-router-dom";
+
+const Owneri = () => {
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [slide, setSlide] = useState(false);
 
   const navigate = useNavigate();
 
-  // validation condition
   const isFormValid =
     name.trim() !== "" &&
-    phone.trim() !== "" &&
-    email.trim() !== "" &&
-    password.trim() !== "";
+    email.includes("@") &&
+    password.length >= 6;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!isFormValid) return;
 
-    setSlide(true); // start animation
+    try {
+      const response = await fetch("http://localhost:5000/api/user/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+        }),
+      });
 
-    setTimeout(() => {
-      navigate("/menu"); // navigate after animation
-    }, 600);
+      const data = await response.json();
+
+      if (response.ok) {
+        setSlide(true);
+
+        setTimeout(() => {
+          navigate("/businfo");
+        }, 600);
+      } else {
+        alert(data.message || "Registration failed");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Server error");
+    }
   };
 
   return (
-    <div className={`page ${slide ? "slide-top" : ""}`}>
-      <div className="user-container">
+    <div className={`pagee ${slide ? "slide-right" : ""}`}>
+      <div className="owner-container">
         <form onSubmit={handleSubmit}>
-          <div className="input-container">
-            <label htmlFor="name">Username:</label>
+          <div className="input-container2">
+
+            <label htmlFor="name">User Name:</label>
             <input
               type="text"
               id="name"
@@ -48,47 +70,40 @@ const User = () => {
             <input
               type="email"
               id="mail"
-              placeholder="Enter your Email"
+              placeholder="Enter email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-            />
-
-            <label htmlFor="num">Phone no:</label>
-            <input
-              type="tel"
-              id="num"
-              placeholder="Enter your number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
             />
 
             <label htmlFor="pass">Password:</label>
             <input
               type="password"
               id="pass"
-              placeholder="Enter your password"
+              placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+
           </div>
 
-          <div className="btn2">
+          <div>
             <button
+              className="btn"
               type="submit"
-              id="in-btn"
               disabled={!isFormValid}
               style={{
                 cursor: isFormValid ? "pointer" : "not-allowed",
                 opacity: isFormValid ? 1 : 0.6,
               }}
             >
-              Login
+              Register
             </button>
           </div>
+
         </form>
       </div>
     </div>
   );
 };
 
-export default User;
+export default Owneri;

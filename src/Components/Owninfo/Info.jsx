@@ -1,40 +1,3 @@
-// import React from 'react'
-// import './Infoc.css'
-// import {Link} from 'react-router-dom'
-// const Info = () => {
-//   return (
-//     <div className='owner-conta'>
-//       <p>This is Bus Information.</p>
-//       <div className='input-conta'>
-
-//         <label for="nam">ownername:</label>
-//         <input type='text'placeholder='Enter name' id='nam'/>
-//         <br />
-//         <label for="bnum">Bus no:</label>
-//         <input type='number'placeholder='Enter register no' id='bnum'/>
-//         <br />
-//         <label for="bnam">Bus name:</label>
-//         <input type='text'placeholder='Enter bus name' id='bnam'/>
-//         <br />
-//         <label for="btyp">Bus Type:</label>
-//         <input type='text'placeholder='Enter bus type' id='btyp'/>
-//         <br />
-//         <label for="name">Total Seats:</label>
-//         <input type='number'placeholder='Enter tital seats' id='name'/>
-//         <br />
-//         <label for="stat">State:</label>
-//         <input type='text'placeholder='Enter state' id='stat'/>
-//         <br />
-        
-//         </div>
-//         <div >
-//           <Link to='/menu'><button type='submit' className='btn3'>submit</button></Link>
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default Info
 import { useState } from "react";
 import "./Infoc.css";
 import { useNavigate } from "react-router-dom";
@@ -50,7 +13,6 @@ const Info = () => {
 
   const navigate = useNavigate();
 
-  // Validation
   const isFormValid =
     ownerName.trim() !== "" &&
     busNo.trim() !== "" &&
@@ -59,15 +21,38 @@ const Info = () => {
     seats > 0 &&
     state.trim() !== "";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isFormValid) return;
 
-    setSlide(true); // start slide animation
+    try {
+      const response = await fetch("http://localhost:5000/api/Bus/addBus", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ownerName,
+          busNo,
+          busName,
+          busType,
+          seats,
+          state,
+        }),
+      });
 
-    setTimeout(() => {
-      navigate("/menu");
-    }, 600); // same duration as CSS
+      const data = await response.json();
+      console.log("Saved data:", data);
+
+      setSlide(true);
+
+      setTimeout(() => {
+        navigate("/menu");
+      }, 600);
+
+    } catch (error) {
+      console.error("Error saving bus info:", error);
+    }
   };
 
   return (
@@ -150,5 +135,3 @@ const Info = () => {
 };
 
 export default Info;
-
-

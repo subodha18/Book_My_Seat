@@ -1,0 +1,19 @@
+#Login {
+  margin-top: 15px;
+  font-size: 15px;
+  text-align: center;
+  color: #555;
+}
+
+#Login a {
+  text-decoration: underline;
+  color: #007bff;
+  font-weight: 600;
+  margin-left: 5px;
+  transition: all 0.3s ease;
+}
+
+#Login a:hover {
+  color: #ff5722;
+  text-decoration: underline;
+}

@@ -31,7 +31,7 @@ exports.login = async (req, res) => {
 
     const Owner = await owner.findOne({ email });
 
-    if (!owner) {
+    if (!Owner) {
       return res.status(404).json({ message: "Owner not found" });
     }
 
@@ -41,11 +41,12 @@ exports.login = async (req, res) => {
       return res.status(401).json({ message: "Invalid password" });
     }
 
-    const token = jwt.sign({ id: owner._id }, "secret");
+    const token = jwt.sign({ id: Owner._id }, "secret");
 
     res.json({
       token,
-      message: "Owner login successfully 🎉"
+      message: "Owner login successfully 🎉",
+      user: { _id: Owner._id, name: Owner.name, email: Owner.email }
     });
 
   } catch (error) {

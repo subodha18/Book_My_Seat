@@ -38,7 +38,7 @@ const Seat = () => {
     setIsBooking(true);
 
     setTimeout(() => {
-      navigate("/conform", {
+      navigate("/payment", {
         state: {
           bus,
           seats: selectedSeats,
@@ -97,41 +97,63 @@ const Seat = () => {
   };
 
   return (
-    <div className="seat-container">
-      <div className="bus-card">
-        <img src={bus.image} alt={bus.name} className="bus-front-image" />
-        <div className="bus-details">
-          <h2>{bus.name}</h2>
-          <p>🕒 Departure: {bus.time}</p>
-          <p className="badge">{bus.type}</p>
-          <p className="badge secondary">{bus.layout}</p>
+    <div className="page-container app-background flex-col-center">
+      <div className="page-content glass-panel animate-slide-up" style={{ padding: '40px', maxWidth: '800px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px', borderBottom: '1px solid var(--border-light)', paddingBottom: '24px' }}>
+          <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+            <img src={bus.image} alt={bus.name} style={{ width: '120px', height: '80px', objectFit: 'cover', borderRadius: '12px' }} />
+            <div>
+              <h2 style={{ color: 'var(--primary-navy)', marginBottom: '4px' }}>{bus.name}</h2>
+              <p style={{ color: 'var(--text-muted)', fontSize: '14px', marginBottom: '8px' }}>🕒 Departure: {bus.time}</p>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <span className="badge-premium">{bus.type}</span>
+                <span className="badge-orange-premium">{bus.layout}</span>
+              </div>
+            </div>
+          </div>
+          <div style={{ textAlign: 'right' }}>
+            <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>Ticket Price</p>
+            <h3 style={{ color: 'var(--brand-emerald)', fontSize: '24px' }}>₹{seatPrice}</h3>
+          </div>
         </div>
-      </div>
 
-      <div className="front">FRONT</div>
-      <div className="driver">🧑‍✈️ Driver</div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          
+          <div className="seat-layout-container" style={{ background: 'var(--surface-color)', padding: '32px', borderRadius: '16px', border: '1px solid var(--border-light)' }}>
+            <div className="front">FRONT</div>
+            <div className="driver">🧑‍✈️ Driver</div>
 
-      <div className="seat-layout">{renderSeats()}</div>
+            <div className="seat-layout">{renderSeats()}</div>
+          </div>
 
-      <div className="price-section slide-up">
-        <h3>Seats: {selectedSeats.join(", ") || "None"}</h3>
-        <h2>Total: ₹ {selectedSeats.length * seatPrice}</h2>
-      </div>
+          <div style={{ background: '#f8fafc', padding: '24px', borderRadius: '12px', border: '1px solid var(--border-light)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div>
+              <p style={{ color: 'var(--text-muted)', fontSize: '14px', marginBottom: '4px' }}>Selected Seats</p>
+              <h3 style={{ color: 'var(--primary-navy)' }}>{selectedSeats.join(", ") || "None"}</h3>
+            </div>
+            <div style={{ textAlign: 'right' }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '14px', marginBottom: '4px' }}>Total Amount</p>
+              <h2 style={{ color: 'var(--brand-orange)', fontSize: '28px' }}>₹ {selectedSeats.length * seatPrice}</h2>
+            </div>
+          </div>
 
-      <button
-        className="book-btn"
-        disabled={selectedSeats.length === 0 || isBooking}
-        onClick={handleBooking}
-      >
-        Confirm Booking
-      </button>
-
-      {isBooking && (
-        <div className="booking-overlay">
-          <div className="loader"></div>
-          <h3>Confirming Your Seats...</h3>
+          <button
+            className="btn-success"
+            style={{ width: '100%', padding: '16px', fontSize: '18px' }}
+            disabled={selectedSeats.length === 0 || isBooking}
+            onClick={handleBooking}
+          >
+            {isBooking ? 'Processing...' : 'Proceed to Checkout'}
+          </button>
         </div>
-      )}
+
+        {isBooking && (
+          <div className="booking-overlay">
+            <div className="loader"></div>
+            <h3>Securing your seats...</h3>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

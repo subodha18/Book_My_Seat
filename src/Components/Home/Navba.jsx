@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import './Nabbarc.css'
 import logo2 from "./logo2.png"
 import Ticket from '../Ticket/Ticket'
 
@@ -9,26 +8,29 @@ const Navba = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div id='nav-contain'>
-      <div id='navbar'>
+    <nav style={{ position: 'sticky', top: 0, zIndex: 1000, padding: '16px 24px', backgroundColor: 'rgba(255, 255, 255, 0.9)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border-light)', boxShadow: 'var(--shadow-sm)' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
 
-        <div id='logoi'>
-          <img id='pho' src={logo2} alt="logo" width="150" />
+        <div style={{ cursor: 'pointer' }}>
+          <img src={logo2} alt="logo" height="40" style={{ objectFit: 'contain' }} />
         </div>
 
-        {/* Hamburger Icon */}
-        <div id="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-          <span></span>
-          <span></span>
-          <span></span>
+        {/* Hamburger Icon for Mobile - Simplified for functionality */}
+        <div 
+          onClick={() => setMenuOpen(!menuOpen)}
+          style={{ display: 'none', cursor: 'pointer', flexDirection: 'column', gap: '4px' }}
+          className="mobile-menu-btn"
+        >
+          <div style={{ width: '24px', height: '3px', backgroundColor: 'var(--primary-navy)' }}></div>
+          <div style={{ width: '24px', height: '3px', backgroundColor: 'var(--primary-navy)' }}></div>
+          <div style={{ width: '24px', height: '3px', backgroundColor: 'var(--primary-navy)' }}></div>
         </div>
 
-        <div id='mulbtn' className={menuOpen ? "active" : ""}>
-          <div id='in'>
-            <label id='lvl'>Select State:</label>
-            <br />
-            <select id='stn'>
-              <option value="">- Select State -</option>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <label style={{ fontSize: '12px', fontWeight: 'bold', color: 'var(--text-muted)', textTransform: 'uppercase' }}>State:</label>
+            <select className="premium-input" style={{ padding: '6px 12px', width: 'auto' }}>
+              <option value="">- Select -</option>
               <option value="Jajpur">Jajpur</option>
               <option value="Dhenkanal">Dhenkanal</option>
               <option value="Angul">Angul</option>
@@ -36,14 +38,14 @@ const Navba = () => {
               <option value="Cuttack">Cuttack</option>
             </select>
           </div>
-          <Link to='menu'><button className='nan-btn'>Home</button></Link>
-          <button className='nan-btn'>Payment</button>
-          <button className='nan-btn'>Ticket Booking</button>
-          <Link to='/'><button className='nan-btn'>Login</button></Link>
+          <Link to='/menu' style={{ textDecoration: 'none' }}><button className='btn-secondary'>Home</button></Link>
+          <Link to='/history' style={{ textDecoration: 'none' }}><button className='btn-secondary'>My History</button></Link>
+          <button className='btn-secondary'>Ticket Booking</button>
+          <Link to='/' style={{ textDecoration: 'none' }}><button className='btn-primary'>Login</button></Link>
         </div>
 
       </div>
-    </div>
+    </nav>
   )
 }
 

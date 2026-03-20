@@ -10,6 +10,8 @@ import Buses from './Components/Bus_Root/Buses';
 import Seat from './Components/Bus_Root/Seat';
 import Confirmation from './Components/Bus_Root/Conformation';
 import OwnerLogin from "./Components/Own/OwnerLogin"
+import Payment from './Components/Bus_Root/Payment';
+import History from './Components/use/History';
 const approuter=createBrowserRouter(
   [
     {
@@ -51,6 +53,14 @@ const approuter=createBrowserRouter(
     {
       path:'/Conform',
       element:<Confirmation />
+    },
+    {
+      path:'/payment',
+      element:<Payment />
+    },
+    {
+      path:'/history',
+      element:<History />
     }
     
   ])

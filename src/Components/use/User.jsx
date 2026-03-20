@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import "./Userc.css";
 import { useNavigate } from "react-router-dom";
 
 const Owneri = () => {
@@ -40,7 +39,7 @@ const Owneri = () => {
         setSlide(true);
 
         setTimeout(() => {
-          navigate("/businfo");
+          navigate("/menu");
         }, 600);
       } else {
         alert(data.message || "Registration failed");
@@ -52,53 +51,55 @@ const Owneri = () => {
   };
 
   return (
-    <div className={`pagee ${slide ? "slide-right" : ""}`}>
-      <div className="owner-container">
-        <form onSubmit={handleSubmit}>
-          <div className="input-container2">
-
-            <label htmlFor="name">User Name:</label>
+    <div className={`page-container app-background flex-col-center ${slide ? "slide-right" : ""}`}>
+      <div className="glass-panel animate-slide-up" style={{ padding: '40px', width: '90%', maxWidth: '400px' }}>
+        <h2 style={{ color: 'var(--primary-navy)', marginBottom: '24px', textAlign: 'center' }}>User Registration</h2>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+          
+          <div className="premium-input-group">
+            <label htmlFor="name">Full Name</label>
             <input
+              className="premium-input"
               type="text"
               id="name"
               placeholder="Enter your name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
+          </div>
 
-            <label htmlFor="mail">Email:</label>
+          <div className="premium-input-group">
+            <label htmlFor="mail">Email Address</label>
             <input
+              className="premium-input"
               type="email"
               id="mail"
               placeholder="Enter email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+          </div>
 
-            <label htmlFor="pass">Password:</label>
+          <div className="premium-input-group">
+            <label htmlFor="pass">Password</label>
             <input
+              className="premium-input"
               type="password"
               id="pass"
-              placeholder="Enter password"
+              placeholder="Create a password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-
           </div>
 
-          <div>
-            <button
-              className="btn"
-              type="submit"
-              disabled={!isFormValid}
-              style={{
-                cursor: isFormValid ? "pointer" : "not-allowed",
-                opacity: isFormValid ? 1 : 0.6,
-              }}
-            >
-              Register
-            </button>
-          </div>
+          <button
+            className="btn-primary"
+            type="submit"
+            disabled={!isFormValid}
+            style={{ marginTop: '24px', width: '100%' }}
+          >
+            Create Account
+          </button>
 
         </form>
       </div>

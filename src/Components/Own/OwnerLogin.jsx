@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./OwnerLogin.css";
 import { useNavigate, Link } from "react-router-dom";
 
 const Owneri = () => {
@@ -35,6 +34,8 @@ const Owneri = () => {
       if (res.ok) {
 
         // login success
+        localStorage.setItem("user", JSON.stringify(data.user));
+        localStorage.setItem("role", "owner");
         setSlide(true);
 
         setTimeout(() => {
@@ -52,45 +53,46 @@ const Owneri = () => {
   };
 
   return (
-    <div className={`pagee ${slide ? "slide-right" : ""}`}>
-      <div className="owner-container">
-        <form onSubmit={handleSubmit}>
-          <div className="input-container2">
-
-            <label htmlFor="mail">Email:</label>
+    <div className={`page-container app-background flex-col-center ${slide ? "slide-right" : ""}`}>
+      <div className="glass-panel animate-slide-up" style={{ padding: '40px', width: '90%', maxWidth: '400px' }}>
+        <h2 style={{ color: 'var(--primary-navy)', marginBottom: '24px', textAlign: 'center' }}>Owner Login</h2>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+          
+          <div className="premium-input-group">
+            <label htmlFor="mail">Email</label>
             <input
+              className="premium-input"
               type="email"
               id="mail"
-              placeholder="Enter email"
+              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+          </div>
 
-            <label htmlFor="pass">Password:</label>
+          <div className="premium-input-group">
+            <label htmlFor="pass">Password</label>
             <input
+              className="premium-input"
               type="password"
               id="pass"
-              placeholder="Enter password"
+              placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-
-            <p style={{ marginTop: "15px" }} id="Login">
-              If Don't have account <Link to="/owner/register">Register</Link>
-            </p>
-
           </div>
+          
+          <p style={{ marginTop: "15px", fontSize: "14px", textAlign: "center", color: "var(--text-muted)" }}>
+            Don't have an account? <Link to="/owner/register" style={{ color: "var(--brand-orange)", fontWeight: "600", textDecoration: "none" }}>Register</Link>
+          </p>
 
           <button
-            className="btn"
+            className="btn-primary"
             type="submit"
             disabled={!isFormValid}
-            style={{
-              cursor: isFormValid ? "pointer" : "not-allowed",
-              opacity: isFormValid ? 1 : 0.6,
-            }}
+            style={{ marginTop: '24px', width: '100%' }}
           >
-            Login
+            Sign In
           </button>
 
         </form>

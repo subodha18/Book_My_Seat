@@ -18,9 +18,8 @@ const Bus = require('./routes/busRoutes')
 app.use("/api/user", user);
 app.use('/api/owner',owner)
 app.use('/api/Bus',Bus)
-// app.use("/api/bus", require("./routes/busRoutes"));
-// app.use("/api/booking", require("./routes/bookingRoutes"));
-// app.use("/api/payment", require("./routes/paymentRoutes"));
+app.use("/api/booking", require("./routes/bookingRoutes"));
+app.use("/api/payment", require("./routes/paymentRoutes"));
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");

@@ -32,6 +32,6 @@ exports.login = async (req, res) => {
 
   const token = jwt.sign({ id: user._id }, "secret");
 
-  res.json({ token,message:"login sucessfully 🎉"});
+  res.json({ token,message:"login sucessfully 🎉", user: { _id: user._id, name: user.name, email: user.email }});
 };
 

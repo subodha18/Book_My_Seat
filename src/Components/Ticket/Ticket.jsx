@@ -16,7 +16,6 @@ const Ticket = () => {
     <div className="flex-col-center" style={{ padding: '60px 20px', width: '100%' }}>
       <div className="glass-panel animate-slide-up" style={{ padding: '40px', width: '100%', maxWidth: '1000px' }}>
         
-        {/* Trip Selection */}
         <div style={{ display: 'flex', gap: '24px', marginBottom: '32px', borderBottom: '1px solid var(--border-light)', paddingBottom: '16px' }}>
             <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontWeight: 'bold' }}>
                 <input
@@ -38,7 +37,6 @@ const Ticket = () => {
             </label>
         </div>
 
-        {/* Search Form */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px', alignItems: 'end' }}>
           
           <div className="premium-input-group" style={{ marginBottom: 0 }}>
@@ -75,7 +73,6 @@ const Ticket = () => {
 
         </div>
 
-        {/* Offers Section */}
         <div style={{ marginTop: '40px' }}>
           <h3 style={{ marginBottom: '16px', color: 'var(--primary-navy)' }}>Special Offers & Passenger Types</h3>
           
@@ -96,7 +93,6 @@ const Ticket = () => {
           </div>
         </div>
 
-        {/* Book Button */}
         <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
           <Link to='/bus' style={{ width: '100%', maxWidth: '300px' }}>
             <button className="btn-success" style={{ width: '100%', padding: '16px', fontSize: '20px' }}>

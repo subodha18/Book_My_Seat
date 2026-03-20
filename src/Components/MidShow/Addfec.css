@@ -1,25 +1,4 @@
-/* #container{
-    height:auto;
-    width: 1200px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    margin: auto;
-    background-color:rgb(237, 243, 242);
-    gap: 20px;
-}
-#img-con{
-    display: flex;
-    gap: 20px;
-    padding:15px;
-}
-img{
-    border-radius: 17px;
-} */
 
-
-/* new */
-/* Container with a Multi-Color Geometric Split */
 #container {
     padding: 60px 20px;
     margin: 40px auto;
@@ -32,18 +11,15 @@ img{
     position: relative;
     overflow: hidden;
 
-    /* Background distribution: 55% Orange, 20% Green, 15% Black, 10% White */
     background: linear-gradient(
         135deg, 
         #FF8C00 0%, 
-        /* #FF8C00 55%,  */
  
         #ffffff 90%
     );
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
 
-/* Heading Styling */
 #con-para {
     z-index: 2;
     text-align: center;
@@ -55,11 +31,9 @@ img{
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 1px;
-    /* Black shadow for readability against orange/green */
     text-shadow: 3px 3px 0px #fffdfd;
 }
 
-/* Image Container: Single Line Layout */
 #img-con {
     display: flex;
     flex-direction: row;
@@ -70,34 +44,25 @@ img{
     z-index: 2;
 }
 
-/* Partner Image Styling */
 #img-con img {
-    /* Making them circular for a "Partner Profile" look */
     height: 180px;
     width: 180px; 
     object-fit: cover;
     border-radius: 50%;
-    
-    /* 15% White Influence: Thick border */
     border: 6px solid #ffffff;
-    
-    /* 20% Green Influence: Outer glow */
     box-shadow: 0 0 0 10px rgba(46, 204, 113, 0.3), 0 15px 30px rgba(0,0,0,0.4);
     
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     cursor: pointer;
-    background-color: #000; /* Black background if image is transparent */
+    background-color: #000; 
 }
 
-/* Creative Hover Effect */
 #img-con img:hover {
-    transform: scale(1.15) rotate(5deg);
-    /* Color Shift on Hover */
+    transform: scale(1.15) rotate(5deg);   
     border-color: #2ecc71;
     box-shadow: 0 0 0 15px rgba(255, 140, 0, 0.4), 0 20px 40px rgba(0,0,0,0.6);
 }
 
-/* Responsive: Single line for Desktop, Grid for Tablet, Stack for Mobile */
 @media (max-width: 950px) {
     #img-con {
         flex-wrap: wrap;

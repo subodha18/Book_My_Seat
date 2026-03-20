@@ -1,10 +1,9 @@
-/* Full page setup */
+
 html, body {
   height: 100%;
   margin: 0;
 }
 
-/* MAIN BACKGROUND – TOTAL PAGE COLOR RATIO */
 .owner-conta {
   min-height: 100vh;
   width: 100%;
@@ -17,18 +16,12 @@ html, body {
     to bottom,
   
     #f47216 50%,    
-
-    /* #16a34a 50%, */
     #16a34a 70%     
-
-    /* #ffffff 70%,
-    #ffffff 85% */
   );
 
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Heading text */
 .owner-conta p {
   color: white;
   font-size: 22px;
@@ -36,7 +29,6 @@ html, body {
   margin-bottom: 20px;
 }
 
-/* Form card */
 .input-conta {
   background: white;
   padding: 20px;
@@ -45,14 +37,12 @@ html, body {
   box-shadow: 0 12px 30px rgba(0,0,0,0.3);
 }
 
-/* Labels */
 .input-conta label {
   font-size: 17px;
   font-weight: 500;
   color: black;
 }
 
-/* Inputs */
 .input-conta input {
   width: 100%;
   padding: 8px 10px;
@@ -63,12 +53,10 @@ html, body {
   font-size: 14px;
 }
 
-/* Input focus */
 .input-conta input:focus {
   border-color: green;
 }
 
-/* Button */
 .btn3 {
   margin-top: 20px;
   padding: 10px 26px;
@@ -86,7 +74,6 @@ html, body {
   );
 }
 
-/* Button hover */
 .btn3:hover {
   transform: scale(1.05);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);

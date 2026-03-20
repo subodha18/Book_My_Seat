@@ -1,6 +1,4 @@
 
-
-/* ===== Global Background ===== */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -9,7 +7,6 @@ body {
   animation: gradientMove 12s ease infinite;
 }
 
-/* ===== Glass Card Container ===== */
 .confirmation-container {
   max-width: 500px;
   margin: 0px auto;
@@ -25,7 +22,6 @@ body {
   animation: cardReveal 0.8s ease-out;
 }
 
-/* ===== Success Icon ===== */
 .success-animation {
   width: 120px;
   height: 100px;
@@ -41,13 +37,12 @@ body {
   animation: pop 0.6s ease, pulseGlow 2s infinite;
 }
 
-/* ===== Floating Heading ===== */
+
 .confirmation-container h2 {
   margin-bottom: 10px;
   animation: floatText 3s ease-in-out infinite;
 }
 
-/* ===== Wish Message ===== */
 .confirmation-container::after {
   content: "Thank you for booking with us 💚 Have a safe & comfortable journey!";
   display: block;
@@ -58,7 +53,7 @@ body {
   animation: slideFade 1.5s ease forwards 0.5s;
 }
 
-/* ===== Bus Image ===== */
+
 .confirmation-container img {
   width: 280px;
   border-radius: 15px;
@@ -67,13 +62,12 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== Booking Details ===== */
 .confirmation-container h3,
 .confirmation-container p {
   margin: 8px 0;
 }
 
-/* ===== Modern Button ===== */
+
 .confirmation-container button {
   margin-top: 20px;
   padding: 12px 30px;
@@ -96,7 +90,7 @@ body {
   transform: scale(0.95);
 }
 
-/* ===== Animations ===== */
+
 
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
@@ -150,7 +144,7 @@ body {
   }
 }
 
-/* ===== Mobile Responsive ===== */
+
 @media (max-width: 600px) {
   .confirmation-container {
     margin: 30px 15px;
